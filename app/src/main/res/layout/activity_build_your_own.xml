@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/store_order_bg"
+    tools:context=".CustomizePizzaActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/selectedToppings"
+        android:layout_width="140dp"
+        android:layout_height="387dp"
+        android:layout_marginStart="56dp"
+        android:background="@android:drawable/screen_background_light"
+        app:layout_constraintBottom_toBottomOf="@+id/toppingAvailable"
+        app:layout_constraintStart_toEndOf="@+id/toppingAvailable"
+        app:layout_constraintTop_toTopOf="@+id/toppingAvailable" />
+
+    <TextView
+        android:id="@+id/customize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/customize"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/toppingAvailable"
+        android:layout_width="140dp"
+        android:layout_height="387dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/screen_background_light"
+        app:layout_constraintEnd_toEndOf="@+id/toppingAvail"
+        app:layout_constraintStart_toStartOf="@+id/toppingAvail"
+        app:layout_constraintTop_toBottomOf="@+id/toppingAvail" />
+
+    <TextView
+        android:id="@+id/toppingAvail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/avail_toppings"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/customize"
+        app:layout_constraintTop_toBottomOf="@+id/customize" />
+
+    <TextView
+        android:id="@+id/toppingAdded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/added_toppings"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/selectedToppings"
+        app:layout_constraintStart_toStartOf="@+id/selectedToppings" />
+
+    <TextView
+        android:id="@+id/Sauce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/sauce"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/toppingAvailable"
+        app:layout_constraintTop_toBottomOf="@+id/toppingAvailable" />
+
+    <RadioGroup
+        android:id="@+id/sauceGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/Sauce"
+        app:layout_constraintTop_toBottomOf="@+id/Sauce">
+
+        <RadioButton
+            android:id="@+id/Tomato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Tomato"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/Alfredo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Alfredo"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/text_price"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/selectedToppings"
+        app:layout_constraintTop_toBottomOf="@+id/selectedToppings" />
+
+    <TextView
+        android:id="@+id/price_print"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Price"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textprice"
+        app:layout_constraintStart_toEndOf="@+id/textprice" />
+
+    <Button
+        android:id="@+id/AddOrderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="placePizzaOrder"
+        android:text="@string/AddPizzaOrder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textprice"
+        app:layout_constraintTop_toBottomOf="@+id/textprice"
+        app:layout_constraintVertical_bias="0.085" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
